@@ -7,7 +7,7 @@ class GamePageProvider extends ChangeNotifier {
   final Dio _dio = Dio();
   BuildContext context;
   final int _questionCount = 10;
-  final String difficulty ;
+  final String difficulty;
   final String _type = 'boolean';
   List? questions;
 
@@ -63,6 +63,7 @@ class GamePageProvider extends ChangeNotifier {
 
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder:
           (BuildContext context) => AlertDialog(
             backgroundColor: isCorrect ? Colors.green : Colors.red,
@@ -89,6 +90,7 @@ class GamePageProvider extends ChangeNotifier {
   Future<void> endGame() async {
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder:
           (context) => AlertDialog(
             backgroundColor: Colors.blue,
